@@ -1,531 +1,1791 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Resume - Esther Nakungu | Black & Green Theme</title>
-  <meta name="description" content="Professional resume of Esther Nakungu - Backend Software Engineer">
-  <meta name="keywords" content="resume, software engineer, backend developer, Esther Nakungu">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Bootstrap Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+  <title>Resume | Esther Nakungu</title>
+  <meta
+    name="description"
+    content="Explore Esther Nakungu’s software engineering experience, education, and technical skills. Based in Kampala, Uganda."
+  >
+  <meta name="theme-color" content="#101412">
 
   <style>
+    /* ==================== DESIGN SYSTEM ==================== */
     :root {
-      --primary-color: #2ECC71;
-      --secondary-color: #1A1A1A;
-      --text-color: #d4d4d4;
-      --bg-color: #121212;
-      --nav-bg: rgba(18, 18, 18, 0.95);
-      --light-text: #ffffff;
-      --dark-text: #000000;
-      --accent-color: #28B463;
-      --surface-color: #1E1E1E;
-      --border-color: rgba(46, 204, 113, 0.2);
-      --shadow-color: rgba(0, 0, 0, 0.25);
-      --border-radius: 15px;
-      --box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
-      --transition: all 0.3s ease;
+      color-scheme: dark;
+      --background: #101412;
+      --surface: #171d19;
+      --surface-raised: #1d2520;
+      --green: #8de5b0;
+      --green-hover: #aff4c9;
+      --white: #f3f7f4;
+      --muted: #a5b2a9;
+      --border: #2c3830;
+      --radius: 20px;
+      --transition: 180ms ease;
+      --container: 1160px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
-    
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 115px;
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
-      color: var(--text-color);
-      background-color: var(--bg-color);
-      overflow-x: hidden;
-    }
-
-    /* Header and Navigation */
-    .header {
-      background-color: var(--nav-bg);
-      padding: 15px 0;
-      transition: var(--transition);
-      border-bottom: 1px solid var(--border-color);
-      z-index: 100;
-      position: fixed;
-      width: 100%;
-      top: 0;
-    }
-    
-    .header.header-scrolled {
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-      background-color: rgba(10, 10, 10, 0.98);
-    }
-
-    .container-fluid {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 40px;
-    }
-
-    .container-xl {
-      max-width: 1200px;
-    }
-
-    .position-relative {
-      position: relative;
-    }
-
-    .d-flex {
-      display: flex;
-    }
-
-    .align-items-center {
-      align-items: center;
-    }
-
-    .justify-content-between {
-      justify-content: space-between;
-    }
-
-    .fixed-top {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 1030;
-    }
-    
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--light-text);
-      text-decoration: none;
-    }
-    
-    .logo span {
-      color: var(--primary-color);
-    }
-    
-    .navmenu {
-      position: relative;
-    }
-    
-    .navmenu ul {
       margin: 0;
-      padding: 0;
-      display: flex;
-      list-style: none;
-      align-items: center;
-    }
-    
-    .navmenu li {
-      position: relative;
-    }
-    
-    .navmenu a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 18px;
+      background: var(--background);
+      color: var(--white);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
       font-size: 16px;
-      font-weight: 500;
-      color: var(--text-color);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    
-    .navmenu a:hover,
-    .navmenu .active,
-    .navmenu .active:focus,
-    .navmenu li:hover > a {
-      color: var(--primary-color);
-    }
-    
-    /* Mobile navigation */
-    .mobile-nav-toggle {
-      color: var(--light-text);
-      font-size: 28px;
-      cursor: pointer;
-      display: none;
-      line-height: 0;
-      transition: var(--transition);
-    }
-
-    .d-xl-none {
-      display: none !important;
-    }
-    
-    @media (max-width: 1199px) {
-      .d-xl-none {
-        display: block !important;
-      }
-
-      .mobile-nav-toggle {
-        display: block;
-      }
-      
-      .navmenu {
-        position: fixed;
-        top: 70px;
-        right: -100%;
-        width: 260px;
-        height: 100%;
-        z-index: 99;
-        overflow-y: auto;
-        background: var(--secondary-color);
-        transition: var(--transition);
-        padding: 20px 0;
-        box-shadow: var(--box-shadow);
-      }
-      
-      .navmenu.navmenu-mobile {
-        right: 0;
-        border-left: 1px solid var(--border-color);
-      }
-      
-      .navmenu ul {
-        display: block;
-      }
-      
-      .navmenu ul a {
-        padding: 10px 20px;
-        font-size: 15px;
-      }
-    }
-
-    /* Hero Section */
-    .hero-section {
-      background: linear-gradient(135deg, rgba(46, 204, 113, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
-      padding: 150px 0 100px;
-      color: white;
-      text-align: center;
-      position: relative;
-      margin-top: 70px;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-    
-    .hero-section h1 {
-      font-size: 46px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    }
-    
-    .hero-section p {
-      font-size: 18px;
-      max-width: 800px;
-      margin: 0 auto;
       line-height: 1.7;
-      opacity: 0.95;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Resume Section */
-    .resume-section {
-      padding: 80px 0;
-      background-color: var(--bg-color);
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    a,
+    button {
+      -webkit-tap-highlight-color: transparent;
+      outline-offset: 5px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--green);
+    }
+
+    ::selection {
+      background: var(--green);
+      color: var(--background);
     }
 
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 40px;
+      width: min(var(--container), calc(100% - 48px));
+      margin-inline: auto;
     }
 
-    .row {
+    .icon {
+      width: 21px;
+      height: 21px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 20px;
+      z-index: 100;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: var(--green);
+      color: var(--background);
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    /* ==================== HEADER ==================== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(16, 20, 18, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      border-radius: 12px;
+      color: var(--background);
+      font-size: 15px;
+      letter-spacing: -1px;
+    }
+
+    .brand-name span {
+      color: var(--green);
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .navigation a {
+      position: relative;
+      padding-block: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    .navigation a:hover,
+    .navigation a[aria-current="page"] {
+      color: var(--white);
+    }
+
+    .navigation a[aria-current="page"]::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 20px;
+      height: 2px;
+      background: var(--green);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--white);
+    }
+
+    /* ==================== HERO ==================== */
+    .hero {
+      position: relative;
+      padding: 78px 0 54px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -250px;
+      right: -120px;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(141, 229, 176, 0.07),
+          transparent 68%
+        );
+      pointer-events: none;
+    }
+
+    .hero-layout {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--green);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: clamp(44px, 6.5vw, 76px);
+      font-weight: 600;
+      letter-spacing: -3.5px;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .hero-description {
+      max-width: 630px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      transition:
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--green);
+      color: #102017;
+    }
+
+    .button-primary:hover {
+      background: var(--green-hover);
+    }
+
+    .button-secondary {
+      border-color: var(--border);
+      background: var(--surface);
+      color: var(--white);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--green);
+      background: var(--surface-raised);
+    }
+
+    .button .icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .print-button {
+      white-space: nowrap;
+    }
+
+    /* ==================== RESUME LAYOUT ==================== */
+    .resume-layout {
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr);
+      align-items: start;
+      gap: 34px;
+      padding-bottom: 80px;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 114px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .panel {
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    /* ==================== PROFILE ==================== */
+    .profile-monogram {
+      display: grid;
+      place-items: center;
+      width: 68px;
+      height: 68px;
+      margin-bottom: 22px;
+      border: 1px solid #3c5945;
+      border-radius: 18px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(141, 229, 176, 0.15),
+          rgba(141, 229, 176, 0.03)
+        );
+      color: var(--green);
+      font-size: 23px;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+    .profile-name {
+      margin-bottom: 8px;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.7px;
+    }
+
+    .profile-role {
+      margin-bottom: 22px;
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    .profile-description {
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 15px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-line .icon {
+      width: 17px;
+      height: 17px;
+      margin-top: 2px;
+      color: var(--green);
+    }
+
+    .contact-line a:hover {
+      color: var(--green);
+    }
+
+    .profile-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 23px;
+    }
+
+    .profile-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 42px;
+      padding: 9px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: 12px;
+      transition:
+        border-color var(--transition),
+        color var(--transition);
+    }
+
+    .profile-links a:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .profile-links .icon {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* ==================== SKILLS ==================== */
+    .sidebar-title {
+      margin-bottom: 20px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+
+    .skill-group + .skill-group {
+      margin-top: 22px;
+    }
+
+    .skill-label {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .tags {
       display: flex;
       flex-wrap: wrap;
-      margin: 0 -15px;
+      gap: 7px;
     }
 
-    .col-lg-6 {
-      flex: 0 0 50%;
-      max-width: 50%;
-      padding: 0 15px;
-    }
-
-    .resume-title {
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--primary-color);
-      margin-bottom: 30px;
-      padding-bottom: 15px;
-      border-bottom: 2px solid var(--border-color);
-    }
-
-    .resume-item {
-      background: var(--surface-color);
-      border-radius: var(--border-radius);
-      padding: 30px;
-      margin-bottom: 30px;
-      box-shadow: var(--box-shadow);
-      position: relative;
-      border-left: 4px solid var(--primary-color);
-      transition: var(--transition);
-    }
-
-    .resume-item:hover {
-      transform: translateX(5px);
-      box-shadow: 0 8px 30px rgba(46, 204, 113, 0.2);
-    }
-
-    .resume-item h4 {
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--light-text);
-      margin-bottom: 10px;
-    }
-
-    .resume-item h5 {
-      font-size: 16px;
-      font-weight: 500;
-      color: var(--primary-color);
-      margin-bottom: 15px;
+    .tag {
       display: inline-block;
-      padding: 5px 15px;
-      background: rgba(46, 204, 113, 0.1);
-      border-radius: 20px;
-    }
-
-    .resume-item p {
-      color: var(--text-color);
-      margin-bottom: 15px;
+      padding: 5px 10px;
+      border: 1px solid #334339;
+      border-radius: 6px;
+      background: rgba(141, 229, 176, 0.04);
+      color: #c8dbce;
+      font-size: 11px;
       line-height: 1.6;
     }
 
-    .resume-item p em {
-      color: var(--primary-color);
+    /* ==================== MAIN CONTENT ==================== */
+    .resume-content {
+      min-width: 0;
+    }
+
+    .section-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 34px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-navigation a {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      transition:
+        color var(--transition),
+        border-color var(--transition);
+    }
+
+    .section-navigation a:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .resume-section + .resume-section {
+      margin-top: 48px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 24px;
+    }
+
+    .section-number {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      border: 1px solid #354b3c;
+      border-radius: 9px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: 23px;
+      font-weight: 600;
+      letter-spacing: -0.6px;
+    }
+
+    .summary-card {
+      padding: 26px 28px;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: 0 14px 14px 0;
+      background:
+        linear-gradient(
+          120deg,
+          rgba(141, 229, 176, 0.05),
+          transparent
+        );
+    }
+
+    .summary-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .summary-card strong {
+      color: var(--white);
       font-weight: 500;
     }
 
-    .resume-item ul {
-      padding-left: 20px;
-      margin-top: 15px;
+    /* ==================== EXPERIENCE / EDUCATION ==================== */
+    .timeline {
+      margin-left: 9px;
+      padding-left: 27px;
+      border-left: 1px solid var(--border);
     }
 
-    .resume-item ul li {
-      padding-bottom: 12px;
-      color: var(--text-color);
-      line-height: 1.6;
+    .timeline-item {
+      position: relative;
+      padding-bottom: 32px;
     }
 
-    .resume-item ul li:last-child {
+    .timeline-item:last-child {
       padding-bottom: 0;
     }
 
-    .resume-item ul li strong {
-      color: var(--light-text);
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 24px;
+      left: -33px;
+      width: 11px;
+      height: 11px;
+      border: 3px solid var(--background);
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 1px #46664f;
     }
 
-    .resume-item ul li a {
-      color: var(--primary-color);
-      text-decoration: none;
-      transition: var(--transition);
+    .resume-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--surface);
     }
 
-    .resume-item ul li a:hover {
-      color: var(--accent-color);
-      text-decoration: underline;
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 12px;
     }
 
-    .pb-0 {
-      padding-bottom: 0 !important;
+    .resume-card h3 {
+      margin-bottom: 7px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: -0.3px;
     }
 
-    /* Responsive */
-    @media (max-width: 991px) {
-      .col-lg-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
+    .organization {
+      margin-bottom: 0;
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    .date {
+      display: inline-block;
+      flex-shrink: 0;
+      padding: 5px 10px;
+      border: 1px solid #35483c;
+      border-radius: 6px;
+      background: rgba(141, 229, 176, 0.04);
+      color: #b8ccbf;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .card-description {
+      margin: 17px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .achievement-list {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+
+    .achievement-list li {
+      padding-left: 4px;
+    }
+
+    .achievement-list li::marker {
+      color: var(--green);
+    }
+
+    .card-tags {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ==================== CALL TO ACTION ==================== */
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 48px;
+      padding: 28px;
+      border: 1px solid #3a5242;
+      border-radius: 15px;
+      background:
+        linear-gradient(
+          120deg,
+          rgba(141, 229, 176, 0.08),
+          rgba(141, 229, 176, 0.015)
+        );
+    }
+
+    .cta h2 {
+      margin-bottom: 8px;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .cta p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .cta .button {
+      flex-shrink: 0;
+    }
+
+    /* ==================== FOOTER ==================== */
+    .footer {
+      padding: 26px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .back-to-top:hover {
+      color: var(--green);
+    }
+
+    .back-to-top .icon {
+      width: 15px;
+      height: 15px;
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 1000px) {
+      .resume-layout {
+        grid-template-columns: 280px minmax(0, 1fr);
+        gap: 24px;
+      }
+
+      .panel {
+        padding: 22px;
+      }
+
+      .resume-card {
+        padding: 24px;
+      }
+
+      .card-top {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .cta {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
 
-    @media (max-width: 768px) {
-      .container-fluid {
-        padding: 0 20px;
+    @media (max-width: 760px) {
+      .header-inner {
+        min-height: 76px;
+        flex-wrap: wrap;
+        gap: 0;
+      }
+
+      .menu-toggle:not([hidden]) {
+        display: inline-flex;
+      }
+
+      .navigation {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0 18px;
+      }
+
+      .navigation a {
+        padding: 12px 0;
+      }
+
+      .navigation a[aria-current="page"]::after {
+        display: none;
+      }
+
+      .navigation[data-collapsible="true"]:not(.is-open) {
+        display: none;
+      }
+
+      .hero {
+        padding: 52px 0 36px;
+      }
+
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .print-button {
+        justify-self: start;
+      }
+
+      .resume-layout {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding-bottom: 55px;
+      }
+
+      .sidebar {
+        position: static;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+
+      .section-navigation {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      .brand {
+        gap: 9px;
+        font-size: 15px;
+      }
+
+      .brand-mark {
+        width: 37px;
+        height: 37px;
+        font-size: 13px;
+      }
+
+      .sidebar {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .section-heading h2 {
+        font-size: 21px;
+      }
+
+      .summary-card {
+        padding: 22px;
+      }
+
+      .resume-card {
+        padding: 22px 20px;
+      }
+
+      .timeline {
+        padding-left: 19px;
+      }
+
+      .timeline-item::before {
+        left: -25px;
+      }
+
+      .resume-card h3 {
+        font-size: 17px;
+      }
+
+      .cta {
+        padding: 24px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+    /* ==================== PRINT / SAVE AS PDF ==================== */
+    @page {
+      size: A4;
+      margin: 16mm;
+    }
+
+    @media print {
+      :root {
+        color-scheme: light;
+        --background: #ffffff;
+        --surface: #ffffff;
+        --surface-raised: #ffffff;
+        --white: #17241c;
+        --muted: #435149;
+        --green: #22623b;
+        --border: #d3ddd6;
+      }
+
+      body {
+        background: #ffffff;
+        color: #17241c;
+        font-size: 10pt;
+      }
+
+      .header,
+      .skip-link,
+      .print-button,
+      .section-navigation,
+      .cta,
+      .footer,
+      .hero::before {
+        display: none !important;
       }
 
       .container {
-        padding: 0 20px;
+        width: 100%;
+        max-width: none;
       }
 
-      .hero-section {
-        padding: 120px 0 70px;
+      .hero {
+        padding: 0 0 18px;
       }
 
-      .hero-section h1 {
-        font-size: 32px;
+      .hero-layout {
+        display: block;
       }
 
-      .hero-section p {
-        font-size: 16px;
+      .eyebrow {
+        margin-bottom: 10px;
+        font-size: 8pt;
       }
 
-      .resume-section {
-        padding: 60px 0;
+      h1 {
+        margin-bottom: 10px;
+        font-size: 29pt;
+        letter-spacing: -1px;
       }
 
-      .resume-item {
-        padding: 20px;
+      .hero-description {
+        max-width: none;
+        font-size: 10pt;
+      }
+
+      .resume-layout {
+        display: block;
+        padding: 0;
+      }
+
+      .sidebar {
+        position: static;
+        display: block;
+      }
+
+      .panel {
+        margin-bottom: 18px;
+        padding: 15px;
+        border-radius: 0;
+      }
+
+      .profile-monogram {
+        display: none;
+      }
+
+      .profile-name {
+        font-size: 18pt;
+      }
+
+      .profile-role,
+      .profile-description,
+      .contact-line {
+        font-size: 9pt;
+      }
+
+      .contact-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 9px 18px;
+        padding-top: 12px;
+      }
+
+      .profile-links {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+
+      .profile-links a {
+        min-height: 0;
+        padding: 0;
+        border: 0;
+        color: #22623b;
+      }
+
+      .profile-links a::after {
+        content: " — " attr(href);
+        font-size: 8pt;
+        overflow-wrap: anywhere;
+      }
+
+      .profile-links .icon {
+        display: none;
+      }
+
+      .skill-group {
+        display: inline-block;
+        width: 48%;
+        margin: 0 0 12px !important;
+        vertical-align: top;
+      }
+
+      .tag {
+        padding: 2px 6px;
+        background: #ffffff;
+        color: #33483b;
+        font-size: 8pt;
+        border-color: #c9d6cd;
+      }
+
+      .section-heading {
+        margin-bottom: 14px;
+        break-after: avoid;
+      }
+
+      .section-heading h2 {
+        font-size: 16pt;
+      }
+
+      .section-number {
+        width: 25px;
+        height: 25px;
+        font-size: 8pt;
+      }
+
+      .resume-section + .resume-section {
+        margin-top: 25px;
+      }
+
+      .summary-card {
+        padding: 12px 15px;
+        background: #ffffff;
+      }
+
+      .summary-card p {
+        font-size: 9pt;
+      }
+
+      .timeline {
+        margin-left: 0;
+        padding-left: 0;
+        border: 0;
+      }
+
+      .timeline-item {
+        padding-bottom: 16px;
+      }
+
+      .timeline-item::before {
+        display: none;
+      }
+
+      .resume-card {
+        padding: 16px;
+        border-radius: 0;
+        background: #ffffff;
+      }
+
+      .card-top {
+        flex-direction: row;
+        break-after: avoid;
+      }
+
+      .resume-card h3 {
+        font-size: 12pt;
+      }
+
+      .organization,
+      .card-description,
+      .achievement-list {
+        font-size: 9pt;
+      }
+
+      .date {
+        border-color: #c9d6cd;
+        background: #ffffff;
+        color: #33483b;
+        font-size: 8pt;
+      }
+
+      .achievement-list {
+        gap: 5px;
+        margin-top: 12px;
+      }
+
+      .achievement-list li {
+        break-inside: avoid;
+      }
+
+      .card-tags {
+        margin-top: 12px;
+        padding-top: 10px;
+      }
+
+      a {
+        color: inherit;
       }
     }
   </style>
 </head>
 
-<body>
-  <!-- Header -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <div class="logo">Esther <span>Nakungu</span></div>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Reusable icons. No external libraries required. -->
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="0"
+    height="0"
+    style="position:absolute;overflow:hidden"
+    aria-hidden="true"
+  >
+    <defs>
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="3"></rect>
+        <path d="m4 7 8 6 8-6"></path>
+      </symbol>
+
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a14 14 0 0 1-7-7l2-2-2-5Z"></path>
+      </symbol>
+
+      <symbol id="icon-location" viewBox="0 0 24 24">
+        <path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"></path>
+        <circle cx="12" cy="10" r="2.5"></circle>
+      </symbol>
+
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14M13 6l6 6-6 6"></path>
+      </symbol>
+
+      <symbol id="icon-external" viewBox="0 0 24 24">
+        <path d="M6 18 18 6M6 6h12v12"></path>
+      </symbol>
+
+      <symbol id="icon-up" viewBox="0 0 24 24">
+        <path d="M12 19V5M6 11l6-6 6 6"></path>
+      </symbol>
+
+      <symbol id="icon-print" viewBox="0 0 24 24">
+        <path d="M7 8V3h10v5M7 17H4V9h16v8h-3"></path>
+        <path d="M7 14h10v7H7zM17 11h.01"></path>
+      </symbol>
+
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16"></path>
+      </symbol>
+
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="m6 6 12 12M18 6 6 18"></path>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Esther Nakungu home">
+        <span class="brand-mark" aria-hidden="true">EN</span>
+        <span class="brand-name">Esther <span>Nakungu</span></span>
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="resume.html" class="active">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-controls="navigation"
+        aria-expanded="false"
+        hidden
+      >
+        <svg class="icon" aria-hidden="true">
+          <use id="menuIcon" href="#icon-menu"></use>
+        </svg>
+      </button>
+
+      <nav class="navigation" id="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html" aria-current="page">Resume</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container">
-        <div class="hero-content">
-          <h1>My Resume</h1>
-          <p>Dedicated and passionate backend software engineer with a growing skill set in creating scalable and efficient web applications. Motivated to learn and contribute to impactful projects.</p>
+  <main id="main">
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="container hero-layout">
+        <div>
+          <div class="eyebrow">My resume</div>
+
+          <h1 id="pageTitle">
+            Experience.<br>
+            Skills. <span>Purpose.</span>
+          </h1>
+
+          <p class="hero-description">
+            A backend software engineer focused on building secure,
+            reliable web applications and turning practical ideas into
+            thoughtful digital solutions.
+          </p>
         </div>
+
+        <button
+          class="button button-secondary print-button"
+          id="printButton"
+          type="button"
+          hidden
+        >
+          <svg class="icon" aria-hidden="true">
+            <use href="#icon-print"></use>
+          </svg>
+          Print / Save as PDF
+        </button>
       </div>
     </section>
 
-    <!-- Resume Section -->
-    <section class="resume-section">
-      <div class="container">
-        <div class="row">
-          <!-- Left Column -->
-          <div class="col-lg-6">
-            <h3 class="resume-title">Summary</h3>
+    <div class="container resume-layout">
+      <!-- ==================== SIDEBAR ==================== -->
+      <aside class="sidebar" aria-label="Profile and technical skills">
 
-            <div class="resume-item pb-0">
-              <h4>Esther Nakungu</h4>
-              <p><em>Ambitious and detail-oriented Backend Software Engineer with experience in developing secure, scalable, and high-performance web applications. Passionate about solving real-world problems through efficient backend solutions and seamless API integrations.</em></p>
-              <ul>
-                <li><strong>Location:</strong> Kampala, Uganda</li>
-                <li><strong>Phone:</strong> (+256) 760-794900</li>
-                <li><strong>Email:</strong> <a href="mailto:nakunguesther044@gmail.com">nakunguesther044@gmail.com</a></li>
-                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/esther-nakungu-41512a316/" target="_blank">linkedin.com/in/esther-nakungu</a></li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/nakungu-esther" target="_blank">github.com/nakungu-esther</a></li>
-              </ul>
+        <section class="panel" aria-labelledby="profileName">
+          <div class="profile-monogram" aria-hidden="true">EN</div>
+
+          <h2 class="profile-name" id="profileName">Esther Nakungu</h2>
+          <p class="profile-role">Backend Software Engineer</p>
+
+          <p class="profile-description">
+            Detail-oriented engineer with experience in backend
+            development, API integration, and full-stack projects.
+            Motivated by continuous learning and solving real-world
+            problems.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-line">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-location"></use>
+              </svg>
+              <span>Kampala, Uganda</span>
             </div>
 
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Certificate in Software Engineering</h4>
-              <h5>2024 - 2025</h5>
-              <p><em>Refactory Academy, Uganda</em></p>
-              <p>Acquired foundational knowledge in software engineering, including backend development, API integration, and best practices in coding and collaboration.</p>
-              <ul>
-                <li>Developed an e-commerce system for procurement, sales, and digital data storage.</li>
-                <li>Implemented secure user authentication and role-based access control.</li>
-                <li>Designed and integrated RESTful APIs for seamless data management.</li>
-                <li>Utilized Node.js, Express.js, and MongoDB for backend development.</li>
-                <li>Built a responsive frontend using React and Bootstrap to enhance user experience.</li>
-                <li>Optimized system performance by improving database queries and data handling.</li>
-              </ul>
+            <div class="contact-line">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-phone"></use>
+              </svg>
+              <a href="tel:+256760794900">+256 760 794 900</a>
             </div>
 
-            <div class="resume-item">
-              <h4>Certificate in Web Development</h4>
-              <h5>2024</h5>
-              <p><em>Refactory Academy, Uganda</em></p>
-              <p>Completed an immersive web development program designed to accelerate industry readiness, with hands-on training in HTML, CSS, JavaScript, and foundational backend workflows.</p>
-              <ul>
-                <li>Executed end-to-end project cycles, focusing on frontend architecture, UI/UX alignment, and responsive design delivery.</li>
-                <li>Applied JavaScript fundamentals to build interactive user interfaces and streamline client-side logic.</li>
-                <li>Integrated backend services to enable data persistence, API communication, and cross-platform functionality.</li>
-                <li>Gained operational exposure to Agile workflows, version control, and collaborative development practices.</li>
-                <li>Built and deployed capstone projects demonstrating production-grade web application capabilities.</li>
-              </ul>
+            <div class="contact-line">
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-mail"></use>
+              </svg>
+              <a href="mailto:nakunguesther044@gmail.com">
+                nakunguesther044@gmail.com
+              </a>
             </div>
           </div>
 
-          <!-- Right Column -->
-          <div class="col-lg-6">
-            <h3 class="resume-title">Professional Experience</h3>
+          <div class="profile-links">
+            <a
+              href="https://github.com/nakungu-esther"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Esther’s GitHub profile, opens in a new tab"
+            >
+              GitHub
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-external"></use>
+              </svg>
+            </a>
 
-            <div class="resume-item">
-              <h4>Full-Stack Software Engineer (Independent Developer)</h4>
-              <h5>2025 – Present</h5>
-              <p><em>Independent Projects</em></p>
-              <ul>
-                <li>Engineered RESTful API ecosystems optimized for high-throughput data flows, enabling seamless cross-platform interoperability.</li>
-                <li>Delivered scalable backend services using Node.js, Nest.js, and Express.js with a focus on performance, modularity, and maintainability.</li>
-                <li>Designed and managed SQL and NoSQL database solutions (PostgreSQL, MongoDB), driving efficient data modeling and storage optimization.</li>
-                <li>Implemented secure authentication and authorization frameworks using JWT across distributed systems.</li>
-                <li>Collaborated with frontend teams to ensure frictionless API integration and UI alignment.</li>
-                <li>Applied Git-driven versioning strategies and operated within Agile delivery cycles to support continuous iteration.</li>
-                <li>Deployed and orchestrated cloud-native applications leveraging AWS and Docker for operational scalability.</li>
-                <li>Built decentralized applications on the Sui blockchain, contributing across smart contract logic and system integration.</li>
-                <li>Delivered user-focused frontend interfaces using React, Vue.js, modern JavaScript, and responsive HTML/CSS.</li>
-              </ul>
-            </div>
+            <a
+              href="https://www.linkedin.com/in/esther-nakungu-41512a316/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Esther’s LinkedIn profile, opens in a new tab"
+            >
+              LinkedIn
+              <svg class="icon" aria-hidden="true">
+                <use href="#icon-external"></use>
+              </svg>
+            </a>
+          </div>
+        </section>
 
-            <div class="resume-item">
-              <h4>Software Engineering Intern</h4>
-              <h5>2025</h5>
-              <p><em>Laboremus Uganda, Kampala, Uganda</em></p>
-              <ul>
-                <li>Developing a payment automation system for reimbursement, streamlining financial transactions and improving efficiency.</li>
-                <li>Building secure and scalable backend services using Node.js and Express.js.</li>
-                <li>Integrating payment APIs to facilitate seamless automated transactions.</li>
-                <li>Designing a user-friendly frontend interface with React for managing reimbursements.</li>
-                <li>Implementing authentication and authorization to ensure secure access to financial data.</li>
-                <li>Collaborating with cross-functional teams to align system features with business requirements.</li>
-                <li>Conducting testing and debugging to enhance system performance and reliability.</li>
-              </ul>
+        <section class="panel" aria-labelledby="skillsTitle">
+          <h2 class="sidebar-title" id="skillsTitle">Technical toolkit</h2>
+
+          <div class="skill-group">
+            <h3 class="skill-label">Backend & APIs</h3>
+            <div class="tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">NestJS</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">JWT</span>
             </div>
           </div>
-        </div>
+
+          <div class="skill-group">
+            <h3 class="skill-label">Databases</h3>
+            <div class="tags">
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Data modeling</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-label">Frontend</h3>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Vue.js</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-label">Tools & delivery</h3>
+            <div class="tags">
+              <span class="tag">Git</span>
+              <span class="tag">Docker</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Agile workflows</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-label">Blockchain</h3>
+            <div class="tags">
+              <span class="tag">Sui</span>
+              <span class="tag">Smart contracts</span>
+              <span class="tag">dApps</span>
+            </div>
+          </div>
+        </section>
+      </aside>
+
+      <!-- ==================== RESUME CONTENT ==================== -->
+      <div class="resume-content">
+        <nav class="section-navigation" aria-label="Resume sections">
+          <a href="#summary">Overview</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#skillsTitle">Technical skills</a>
+        </nav>
+
+        <!-- OVERVIEW -->
+        <section class="resume-section" id="summary" aria-labelledby="summaryTitle">
+          <div class="section-heading">
+            <span class="section-number" aria-hidden="true">01</span>
+            <h2 id="summaryTitle">Professional overview</h2>
+          </div>
+
+          <div class="summary-card">
+            <p>
+              I am a <strong>Backend Software Engineer</strong> with
+              experience developing secure, scalable web applications
+              and integrating APIs. My work spans backend services,
+              database design, authentication, and responsive frontend
+              interfaces. I value maintainable code, clear collaboration,
+              and practical solutions that address users’ needs.
+            </p>
+          </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section
+          class="resume-section"
+          id="experience"
+          aria-labelledby="experienceTitle"
+        >
+          <div class="section-heading">
+            <span class="section-number" aria-hidden="true">02</span>
+            <h2 id="experienceTitle">Professional experience</h2>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="resume-card">
+                <div class="card-top">
+                  <div>
+                    <h3>Full-Stack Software Engineer</h3>
+                    <p class="organization">
+                      Independent Developer · Independent Projects
+                    </p>
+                  </div>
+                  <span class="date">2025 – Present</span>
+                </div>
+
+                <p class="card-description">
+                  Develop web applications across backend services,
+                  databases, frontend interfaces, and deployment.
+                </p>
+
+                <ul class="achievement-list">
+                  <li>
+                    Build RESTful APIs to support data exchange
+                    and integration between applications.
+                  </li>
+                  <li>
+                    Develop modular backend services using Node.js,
+                    NestJS, and Express.js, with attention to
+                    performance and maintainability.
+                  </li>
+                  <li>
+                    Design and manage PostgreSQL and MongoDB databases,
+                    including data models, queries, and storage.
+                  </li>
+                  <li>
+                    Implement JWT-based authentication and authorization
+                    to manage secure access to application resources.
+                  </li>
+                  <li>
+                    Collaborate with frontend teams to integrate APIs
+                    and align application behavior with interface
+                    requirements.
+                  </li>
+                  <li>
+                    Use Git and Agile workflows to manage changes,
+                    collaborate, and support iterative development.
+                  </li>
+                  <li>
+                    Deploy applications using AWS and Docker
+                    to support consistent environments and scalability.
+                  </li>
+                  <li>
+                    Build decentralized applications on the Sui
+                    blockchain, contributing to smart contract logic
+                    and system integration.
+                  </li>
+                  <li>
+                    Develop responsive interfaces using React, Vue.js,
+                    JavaScript, HTML, and CSS.
+                  </li>
+                </ul>
+
+                <div class="tags card-tags" aria-label="Technologies used">
+                  <span class="tag">Node.js</span>
+                  <span class="tag">NestJS</span>
+                  <span class="tag">Express.js</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">MongoDB</span>
+                  <span class="tag">React</span>
+                  <span class="tag">Vue.js</span>
+                  <span class="tag">AWS</span>
+                  <span class="tag">Docker</span>
+                  <span class="tag">Sui</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="resume-card">
+                <div class="card-top">
+                  <div>
+                    <h3>Software Engineering Intern</h3>
+                    <p class="organization">
+                      Laboremus Uganda · Kampala, Uganda
+                    </p>
+                  </div>
+                  <span class="date">2025</span>
+                </div>
+
+                <p class="card-description">
+                  Contributed to a payment automation system
+                  for managing reimbursements.
+                </p>
+
+                <ul class="achievement-list">
+                  <li>
+                    Contributed to reimbursement automation workflows
+                    to streamline financial transactions.
+                  </li>
+                  <li>
+                    Developed backend services using Node.js
+                    and Express.js.
+                  </li>
+                  <li>
+                    Integrated payment APIs to support automated
+                    transaction processing.
+                  </li>
+                  <li>
+                    Built React interfaces for managing reimbursements
+                    and interacting with backend services.
+                  </li>
+                  <li>
+                    Implemented authentication and authorization
+                    to protect access to financial data.
+                  </li>
+                  <li>
+                    Collaborated with cross-functional teams
+                    to align system features with business requirements.
+                  </li>
+                  <li>
+                    Tested and debugged application features
+                    to improve performance and reliability.
+                  </li>
+                </ul>
+
+                <div class="tags card-tags" aria-label="Technologies used">
+                  <span class="tag">Node.js</span>
+                  <span class="tag">Express.js</span>
+                  <span class="tag">React</span>
+                  <span class="tag">Payment APIs</span>
+                  <span class="tag">Authentication</span>
+                  <span class="tag">Testing</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section
+          class="resume-section"
+          id="education"
+          aria-labelledby="educationTitle"
+        >
+          <div class="section-heading">
+            <span class="section-number" aria-hidden="true">03</span>
+            <h2 id="educationTitle">Education & training</h2>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="resume-card">
+                <div class="card-top">
+                  <div>
+                    <h3>Certificate in Software Engineering</h3>
+                    <p class="organization">Refactory Academy, Uganda</p>
+                  </div>
+                  <span class="date">2024 – 2025</span>
+                </div>
+
+                <p class="card-description">
+                  Practical training in software engineering,
+                  backend development, API integration, coding
+                  practices, and collaborative development.
+                </p>
+
+                <ul class="achievement-list">
+                  <li>
+                    Developed an e-commerce system supporting
+                    procurement, sales, and digital data storage.
+                  </li>
+                  <li>
+                    Implemented secure user authentication
+                    and role-based access control.
+                  </li>
+                  <li>
+                    Designed and integrated RESTful APIs
+                    for application data management.
+                  </li>
+                  <li>
+                    Built backend functionality using Node.js,
+                    Express.js, and MongoDB.
+                  </li>
+                  <li>
+                    Created a responsive frontend using React
+                    and Bootstrap.
+                  </li>
+                  <li>
+                    Improved database queries and data handling
+                    to optimize system performance.
+                  </li>
+                </ul>
+
+                <div class="tags card-tags" aria-label="Areas of study">
+                  <span class="tag">Backend development</span>
+                  <span class="tag">REST APIs</span>
+                  <span class="tag">Access control</span>
+                  <span class="tag">E-commerce</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="resume-card">
+                <div class="card-top">
+                  <div>
+                    <h3>Certificate in Web Development</h3>
+                    <p class="organization">Refactory Academy, Uganda</p>
+                  </div>
+                  <span class="date">2024</span>
+                </div>
+
+                <p class="card-description">
+                  Immersive training in HTML, CSS, JavaScript,
+                  and foundational backend workflows, supported
+                  by practical web development projects.
+                </p>
+
+                <ul class="achievement-list">
+                  <li>
+                    Completed end-to-end project cycles, including
+                    frontend structure, UI/UX alignment,
+                    and responsive design.
+                  </li>
+                  <li>
+                    Applied JavaScript fundamentals to build
+                    interactive interfaces and client-side logic.
+                  </li>
+                  <li>
+                    Integrated backend services for data persistence,
+                    API communication, and cross-platform functionality.
+                  </li>
+                  <li>
+                    Practiced Agile workflows, version control,
+                    and collaborative software development.
+                  </li>
+                  <li>
+                    Built and deployed capstone web applications
+                    to demonstrate practical development skills.
+                  </li>
+                </ul>
+
+                <div class="tags card-tags" aria-label="Areas of study">
+                  <span class="tag">HTML & CSS</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Responsive design</span>
+                  <span class="tag">Git</span>
+                  <span class="tag">Agile</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="cta" aria-labelledby="ctaTitle">
+          <div>
+            <h2 id="ctaTitle">Let’s build something useful.</h2>
+            <p>
+              Get in touch to discuss a project or professional opportunity.
+            </p>
+          </div>
+
+          <a class="button button-primary" href="contact.html">
+            Contact me
+            <svg class="icon" aria-hidden="true">
+              <use href="#icon-arrow"></use>
+            </svg>
+          </a>
+        </section>
       </div>
-    </section>
+    </div>
   </main>
 
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>
+        &copy; <span id="year">2026</span> Esther Nakungu.
+        All rights reserved.
+      </p>
+
+      <a class="back-to-top" href="#top">
+        Back to top
+        <svg class="icon" aria-hidden="true">
+          <use href="#icon-up"></use>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
   <script>
-    // Navbar scroll effect
-    const navbar = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('header-scrolled');
-      } else {
-        navbar.classList.remove('header-scrolled');
+    "use strict";
+
+    // ==================== FOOTER YEAR ====================
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // ==================== PRINT / SAVE AS PDF ====================
+    const printButton = document.getElementById("printButton");
+
+    printButton.hidden = false;
+
+    printButton.addEventListener("click", function () {
+      window.print();
+    });
+
+    // ==================== MOBILE NAVIGATION ====================
+    const menuToggle = document.getElementById("menuToggle");
+    const navigation = document.getElementById("navigation");
+    const menuIcon = document.getElementById("menuIcon");
+    const mobileViewport = window.matchMedia("(max-width: 760px)");
+
+    menuToggle.hidden = false;
+    navigation.dataset.collapsible = "true";
+
+    function setMenuOpen(isOpen) {
+      navigation.classList.toggle("is-open", isOpen);
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
+
+      menuIcon.setAttribute(
+        "href",
+        isOpen ? "#icon-close" : "#icon-menu"
+      );
+    }
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen =
+        menuToggle.getAttribute("aria-expanded") === "true";
+
+      setMenuOpen(!isOpen);
+    });
+
+    navigation.addEventListener("click", function (event) {
+      if (
+        event.target.closest("a") &&
+        mobileViewport.matches
+      ) {
+        setMenuOpen(false);
       }
     });
 
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.mobile-nav-toggle');
-    const navLinks = document.getElementById('navmenu');
+    document.addEventListener("keydown", function (event) {
+      const isOpen =
+        menuToggle.getAttribute("aria-expanded") === "true";
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('navmenu-mobile');
-      menuToggle.classList.toggle('bi-list');
-      menuToggle.classList.toggle('bi-x');
+      if (event.key === "Escape" && isOpen) {
+        setMenuOpen(false);
+        menuToggle.focus();
+      }
     });
 
-    // Close menu when clicking a link
-    document.querySelectorAll('.navmenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('navmenu-mobile');
-        menuToggle.classList.add('bi-list');
-        menuToggle.classList.remove('bi-x');
-      });
+    document.addEventListener("click", function (event) {
+      if (
+        mobileViewport.matches &&
+        !navigation.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    });
+
+    mobileViewport.addEventListener("change", function () {
+      setMenuOpen(false);
     });
   </script>
 </body>

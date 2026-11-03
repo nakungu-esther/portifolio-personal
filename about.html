@@ -1,630 +1,2311 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>About</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <title>About | Esther Nakungu</title>
+  <meta
+    name="description"
+    content="Meet Esther Nakungu, a backend software engineer in Kampala, Uganda. Explore her projects, technical skills, and technology community."
+  >
+  <meta name="theme-color" content="#101412">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+    /* ==================== DESIGN SYSTEM ==================== */
+    :root {
+      color-scheme: dark;
+      --background: #101412;
+      --surface: #171d19;
+      --raised: #1d2520;
+      --green: #8de5b0;
+      --green-hover: #aff4c9;
+      --white: #f3f7f4;
+      --muted: #a5b2a9;
+      --border: #2c3830;
+      --radius: 20px;
+    }
 
-  <!-- Vendor CSS Files -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/aos/aos.css" rel="stylesheet">
-  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-  <!-- Main CSS File -->
-  <link href="css/main.css" rel="stylesheet">
+    [hidden] {
+      display: none !important;
+    }
 
-  <!-- =======================================================
-  * Template Name: Personal
-  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--white);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    figure {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a,
+    button {
+      outline-offset: 5px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--green);
+    }
+
+    ::selection {
+      background: var(--green);
+      color: var(--background);
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 20px;
+      z-index: 100;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: var(--green);
+      color: var(--background);
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    /* ==================== HEADER ==================== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(16, 20, 18, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--green);
+      color: var(--background);
+      font-size: 15px;
+      letter-spacing: -1px;
+    }
+
+    .brand-name span {
+      color: var(--green);
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .navigation a {
+      position: relative;
+      padding-block: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 180ms ease;
+    }
+
+    .navigation a:hover,
+    .navigation a[aria-current="page"] {
+      color: var(--white);
+    }
+
+    .navigation a[aria-current="page"]::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 20px;
+      height: 2px;
+      background: var(--green);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--white);
+      font-size: 23px;
+    }
+
+    /* ==================== SHARED ELEMENTS ==================== */
+    .eyebrow,
+    .section-label {
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      font-size: 12px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--green);
+    }
+
+    .section-label {
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      margin-bottom: 16px;
+      font-size: clamp(29px, 4vw, 42px);
+      font-weight: 600;
+      letter-spacing: -1.3px;
+    }
+
+    .section-description {
+      max-width: 650px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+
+    .section {
+      padding: 72px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 20px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      transition:
+        transform 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: var(--green);
+    }
+
+    .button-primary {
+      background: var(--green);
+      color: #102017;
+      border-color: var(--green);
+    }
+
+    .button-primary:hover {
+      background: var(--green-hover);
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .text-link:hover {
+      text-decoration: underline;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tag {
+      padding: 5px 10px;
+      border: 1px solid #334339;
+      border-radius: 6px;
+      background: rgba(141, 229, 176, 0.04);
+      color: #c8dbce;
+      font-size: 11px;
+    }
+
+    /* ==================== HERO ==================== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 78px 0 58px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -240px;
+      right: -140px;
+      width: 700px;
+      height: 700px;
+      pointer-events: none;
+      background: radial-gradient(
+        circle,
+        rgba(141, 229, 176, 0.07),
+        transparent 68%
+      );
+    }
+
+    .hero .container {
+      position: relative;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      font-size: clamp(44px, 6.5vw, 76px);
+      font-weight: 600;
+      letter-spacing: -3.5px;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    /* ==================== ABOUT PROFILE ==================== */
+    .about-section {
+      padding-bottom: 75px;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      align-items: start;
+      gap: 55px;
+    }
+
+    .portrait-card {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .portrait-image {
+      position: relative;
+      aspect-ratio: 4 / 4.7;
+      background: linear-gradient(135deg, #344d3c, #19251d);
+    }
+
+    .portrait-fallback {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      font-size: 90px;
+      font-weight: 600;
+    }
+
+    .portrait-image img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    .portrait-caption {
+      padding: 20px 22px;
+    }
+
+    .portrait-caption strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .portrait-caption span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .about-copy > p:not(.section-label) {
+      margin-bottom: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    .profile-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 19px 24px;
+      margin: 27px 0;
+      padding: 24px 0;
+      border-block: 1px solid var(--border);
+    }
+
+    .profile-details div {
+      min-width: 0;
+    }
+
+    .profile-details dt {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .profile-details dd {
+      margin: 5px 0 0;
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .profile-details a:hover {
+      color: var(--green);
+    }
+
+    .about-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ==================== PROJECTS ==================== */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+      transition:
+        transform 200ms ease,
+        border-color 200ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #506d59;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .project-symbol {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid #354b3c;
+      border-radius: 12px;
+      background: rgba(141, 229, 176, 0.05);
+      color: var(--green);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .project-category {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.6px;
+    }
+
+    .project-card > p {
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .project-card .tags {
+      margin-top: auto;
+      margin-bottom: 24px;
+    }
+
+    .project-bottom {
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .coming-soon {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ==================== ANIMATED SKILLS ==================== */
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 60px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-content: start;
+      gap: 27px 30px;
+    }
+
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+
+    .skill-percent {
+      color: var(--green);
+      font-size: 12px;
+    }
+
+    .skill-track {
+      height: 7px;
+      overflow: hidden;
+      border-radius: 99px;
+      background: #28332c;
+    }
+
+    .skill-fill {
+      width: var(--level);
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #469c69, var(--green));
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+
+    .skills-grid.is-ready .skill-fill {
+      transform: scaleX(0);
+      transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: var(--delay, 0ms);
+    }
+
+    .skills-grid.is-ready.is-visible .skill-fill {
+      transform: scaleX(1);
+    }
+
+    .skills-note {
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* ==================== VALUES ==================== */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .value-item {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      font-size: 13px;
+    }
+
+    .value-item span {
+      color: var(--green);
+      margin-right: 8px;
+    }
+
+    /* ==================== COMMUNITY CAROUSEL ==================== */
+    .community-carousel {
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .carousel-viewport {
+      overflow: hidden;
+      border-radius: 13px;
+    }
+
+    .carousel-track {
+      display: flex;
+      align-items: stretch;
+      transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .person-slide {
+      flex: 0 0 100%;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      align-items: center;
+      gap: 40px;
+      padding: 38px;
+      background: linear-gradient(
+        120deg,
+        rgba(141, 229, 176, 0.04),
+        transparent
+      );
+    }
+
+    .person-avatar {
+      position: relative;
+      width: 180px;
+      aspect-ratio: 1;
+      overflow: hidden;
+      border: 1px solid #3b5142;
+      border-radius: 22px;
+      background: var(--raised);
+    }
+
+    .person-avatar span {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      font-size: 38px;
+      font-weight: 600;
+    }
+
+    .person-avatar img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .person-slide h3 {
+      margin-bottom: 9px;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.7px;
+    }
+
+    .person-role {
+      margin-bottom: 17px;
+      color: var(--green);
+      font-size: 12px;
+    }
+
+    .person-description {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .profile-source {
+      color: var(--green);
+      font-size: 11px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 0 22px;
+      padding: 20px 0 8px;
+      border-top: 1px solid var(--border);
+    }
+
+    .carousel-buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .carousel-button {
+      min-width: 40px;
+      min-height: 40px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--raised);
+      color: var(--white);
+      font-size: 13px;
+    }
+
+    .carousel-button:hover {
+      border-color: var(--green);
+    }
+
+    .carousel-dots {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .carousel-dot {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 36px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+
+    .carousel-dot::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 99px;
+      background: #536459;
+      transition: width 200ms ease, background 200ms ease;
+    }
+
+    .carousel-dot[aria-current="true"]::before {
+      width: 21px;
+      background: var(--green);
+    }
+
+    .slide-count {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .community-note {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ==================== CTA & FOOTER ==================== */
+    .cta-section {
+      padding-bottom: 75px;
+    }
+
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 38px;
+      border: 1px solid #3a5242;
+      border-radius: var(--radius);
+      background: linear-gradient(
+        120deg,
+        rgba(141, 229, 176, 0.08),
+        transparent
+      );
+    }
+
+    .cta h2 {
+      margin-bottom: 10px;
+      font-size: 29px;
+      font-weight: 600;
+      letter-spacing: -0.8px;
+    }
+
+    .cta p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cta .button {
+      flex-shrink: 0;
+    }
+
+    .footer {
+      padding: 26px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .footer a:hover {
+      color: var(--green);
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 960px) {
+      .about-layout,
+      .skills-layout {
+        gap: 32px;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .person-slide {
+        grid-template-columns: 140px minmax(0, 1fr);
+        gap: 26px;
+        padding: 28px;
+      }
+
+      .person-avatar {
+        width: 140px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .header-inner {
+        min-height: 76px;
+        flex-wrap: wrap;
+        gap: 0;
+      }
+
+      .menu-toggle:not([hidden]) {
+        display: block;
+      }
+
+      .navigation {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 0 18px;
+      }
+
+      .navigation a {
+        padding: 12px 0;
+      }
+
+      .navigation a[aria-current="page"]::after {
+        display: none;
+      }
+
+      .navigation[data-collapsible]:not(.is-open) {
+        display: none;
+      }
+
+      .hero {
+        padding: 52px 0 38px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .about-layout,
+      .skills-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait-card {
+        width: min(100%, 440px);
+      }
+
+      .section {
+        padding: 55px 0;
+      }
+
+      .about-section,
+      .cta-section {
+        padding-bottom: 55px;
+      }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .person-slide {
+        grid-template-columns: 1fr;
+        align-content: start;
+        gap: 22px;
+      }
+
+      .person-avatar {
+        width: 100px;
+        border-radius: 16px;
+      }
+
+      .person-slide h3 {
+        font-size: 24px;
+      }
+
+      .cta {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      .brand {
+        gap: 9px;
+        font-size: 15px;
+      }
+
+      .brand-mark {
+        width: 37px;
+        height: 37px;
+        font-size: 13px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .profile-details,
+      .project-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        padding: 24px;
+      }
+
+      .person-slide {
+        padding: 24px 18px;
+      }
+
+      .person-avatar {
+        width: 90px;
+      }
+
+      .person-description {
+        font-size: 13px;
+      }
+
+      .carousel-controls {
+        margin-inline: 10px;
+        gap: 10px;
+      }
+
+      .slide-count {
+        display: none;
+      }
+
+      .carousel-dot {
+        width: 25px;
+      }
+
+      .value-item {
+        padding: 16px 12px;
+        font-size: 12px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+
+      .skills-grid.is-ready .skill-fill {
+        transform: scaleX(1);
+      }
+    }
+  </style>
 </head>
 
-<body class="about-page">
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <div class="logo">Esther <span>Nakungu</span></div>
+  <!-- ==================== HEADER ==================== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Esther Nakungu home">
+        <span class="brand-mark" aria-hidden="true">EN</span>
+        <span class="brand-name">Esther <span>Nakungu</span></span>
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-           <li><a href="resume.html">Resume</a></li>
-          <!-- <li><a href="services.html">Services</a></li> 
-          <li><a href="portfolio.html">Portfolio</a></li> -->
-          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li> -->
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-controls="navigation"
+        aria-expanded="false"
+        hidden
+      >☰</button>
 
+      <nav class="navigation" id="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main class="main">
+  <main id="main">
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="container">
+        <div class="eyebrow">About me</div>
 
-    <!-- Page Title -->
-    <div class="page-title" data-aos="fade">
-      <div class="heading">
-        <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
-              <h1>About</h1>
-              <p class="mb-0">I am a dedicated web developer with a strong focus on creating dynamic and user-friendly applications. My expertise lies in utilizing technologies like Express.js and Pug for server-side development and templating, allowing me to build efficient web solutions. I pay close attention to detail in both functionality and design, ensuring a seamless user experience.</p>
-            </div>
-          </div>
-        </div>
+        <h1 id="pageTitle">
+          Thoughtful code.<br>
+          <span>Meaningful experiences.</span>
+        </h1>
+
+        <p class="hero-description">
+          I’m Esther Nakungu, a backend software engineer and web
+          developer based in Kampala, Uganda. I build practical
+          applications that connect reliable systems with intuitive
+          user experiences.
+        </p>
       </div>
-      <nav class="breadcrumbs">
-        <div class="container">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">About</li>
-          </ol>
-        </div>
-      </nav>
-    </div><!-- End Page Title -->
+    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="images/Vscode 238.jpg" style="height:90%; width: 100%;" class="img-fluid" alt="">
+    <!-- ==================== ABOUT ==================== -->
+    <section class="about-section" aria-labelledby="aboutTitle">
+      <div class="container about-layout">
+        <figure class="portrait-card">
+          <div class="portrait-image">
+            <span class="portrait-fallback" aria-hidden="true">EN</span>
+            <img
+              src="images/Vscode%20238.jpg"
+              alt="Esther Nakungu"
+              width="600"
+              height="705"
+              fetchpriority="high"
+              data-image-fallback
+            >
           </div>
-          <div class="col-lg-8 content">
-            <h2>Backend Engineer &amp; Web Developer.</h2>
-            <p class="py-3">
-              As a Backend Software Engineer with a flair for UI/UX Design, I blend the precision of functionality with the art of aesthetics. My goal is to create products that are not only robust and scalable on the backend but also visually engaging, intuitive, and accessible on the frontend. By understanding user needs, I design seamless and enjoyable experiences that drive user satisfaction, retention, and product success. My approach ensures that the synergy between design and development results in a cohesive, high-quality product.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>14 December 2004</span></li> -->
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+256 760 794 900</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Kampala, Uganda</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>20 yrs</span></li> -->
-                  <li><i class="bi bi-chevron-right"></i> <strong>Certificate:</strong> <span>Software engineering</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>nakunguesther044@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Not yet</span></li>
-                </ul>
-              </div>
-            </div>
-            <p class="py-3">
-              As a Full Stack Developer, I embrace the challenge of designing and building complete solutions, balancing both front-end elegance and back-end efficiency. I believe in delivering tailored, scalable systems that adapt to diverse project needs, always striving to exceed expectations through thoughtful architecture and clean, maintainable code.
+
+          <figcaption class="portrait-caption">
+            <strong>Esther Nakungu</strong>
+            <span>Backend Software Engineer</span>
+          </figcaption>
+        </figure>
+
+        <div class="about-copy">
+          <p class="section-label">The person behind the code</p>
+
+          <h2 class="section-title" id="aboutTitle">
+            Backend engineering.<br>
+            A thoughtful eye for design.
+          </h2>
+
+          <p>
+            My work brings together backend development, web development,
+            and an interest in UI/UX design. I enjoy creating applications
+            that are well structured behind the scenes and straightforward
+            to use.
           </p>
-          
+
+          <p>
+            I work with technologies such as JavaScript, Node.js,
+            Express.js, and Pug to build application functionality
+            and dynamic interfaces. My projects explore practical needs
+            across healthcare, education, property management,
+            and agriculture.
+          </p>
+
+          <dl class="profile-details">
+            <div>
+              <dt>Based in</dt>
+              <dd>Kampala, Uganda</dd>
+            </div>
+
+            <div>
+              <dt>Qualification</dt>
+              <dd>Certificate in Software Engineering</dd>
+            </div>
+
+            <div>
+              <dt>Email address</dt>
+              <dd>
+                <a href="mailto:nakunguesther044@gmail.com">
+                  nakunguesther044@gmail.com
+                </a>
+              </dd>
+            </div>
+
+            <div>
+              <dt>Phone number</dt>
+              <dd>
+                <a href="tel:+256760794900">
+                  +256 760 794 900
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <p>
+            I value maintainable code, continuous learning, and clear
+            collaboration. As a full-stack developer, I enjoy connecting
+            responsive interfaces with dependable backend services.
+          </p>
+
+          <div class="about-actions">
+            <a class="button button-primary" href="resume.html">
+              Explore my resume <span aria-hidden="true">→</span>
+            </a>
+
+            <a class="button" href="#projects">
+              View my projects
+            </a>
           </div>
-        </div>
-
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Stats Section -->
-<!-- Projects Section -->
-<section id="projects" class="projects section py-5">
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>projects</h2>
-      <div><span>My</span> <span class="description-title"> projects</span></div>
-    </div><!-- End Section Title -->
-  <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-    <!-- <h2 class="section-title mb-5" style="color: aliceblue;">My Projects</h2> -->
-    <div class="row gy-4">
-
-      <!-- Project 1 -->
-      <div class="col-lg-3 col-md-6">
-        <div class="project-card shadow-sm">
-          <a href="https://nakungu-esther.github.io/calculator/" target="_blank" class="project-link">
-            <h3>Calculator App</h3>
-          </a>
-          <p>A simple calculator,user friendly built with HTML, CSS, and JavaScript.</p>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="col-lg-3 col-md-6">
-        <div class="project-card shadow-sm">
-          <a href="https://nakungu-esther.github.io/TO-DO-LISTS/" target="_blank" class="project-link">
-            <h3>To-Do List</h3>
-          </a>
-          <p>A task management app using JavaScript for interactivity and user-friendly.</p>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="col-lg-3 col-md-6">
-        <div class="project-card shadow-sm">
-          <a href="https://meek-truffle-06a284.netlify.app/" target="_blank" class="project-link">
-            <h3>Baby Youtube</h3>
-          </a>
-          <p>A responsive webpage designed with react js techniques. Only for kids.</p>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="col-lg-3 col-md-6">
-        <div class="project-card shadow-sm">
-          <a href="https://dulcet-liger-79d43f.netlify.app/" target="_blank" class="project-link">
-            <h3>Weather app</h3>
-          </a>
-          <p>weather app provides real-time weather updates designed with react.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-    <!-- <section id="stats" class="stats section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-    
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <!-- Replace the icon with a project image -->
-            <!-- <img src="path-to-your-project-image.jpg" alt="Project 1" class="project-image">
-            <div class="stats-item">
-              <span id="project1-count" class="purecounter">0</span>
-              <p>Project 1</p>
-            </div> -->
-          </div><!-- End Stats Item -->
-    
-          <!-- <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <!-- Replace the icon with another project image -->
-            <!-- <img src="images/dic.jpeg" alt="Project 2" class="project-image">
-            <div class="stats-item">
-              <span id="project2-count" class="purecounter">0</span>
-              <p>Project 2</p> -->
-            <!-- </div> --> 
-          <!-- </div>End Stats Item --> 
-    
-          <!-- Repeat for more projects -->
-<!--     
         </div>
       </div>
     </section>
-     -->
-    <!-- <section id="stats" class="stats section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4"> -->
-
-          <!-- <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-emoji-smile"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Happy Clients</p>
-            </div>
-          </div>End Stats Item -->
-
-          <!-- <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-journal-richtext"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
-            </div> -->
-          </div><!-- End Stats Item -->
-<!-- 
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-headset"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
-            </div>
-          </div>End Stats Item -->
-<!-- 
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-people"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hard Workers</p>
-            </div>
-          </div>End Stats Item -->
-
-        <!-- </div>
-
-      </div> -->
-
-    </section><!-- /Stats Section -->
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <div><span>My</span> <span class="description-title">Skills</span></div>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-            <div class="progress">
-              <span class="skill"><span>React.js</span> <i class="val">55%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>Node.js</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>WordPress/CMS</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>MongoDB</span> <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-            <div class="progress">
-              <span class="skill"><span>PostgresSQL</span> <i class="val">55%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Skills Section -->
-
-    <!-- Interests Section -->
-    <section id="interests" class="interests section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Features</h2>
-        <div><span>I'm</span> <span class="description-title">interested in</span></div>
-      </div><!-- End Section Title -->
-
+    <!-- ==================== PROJECTS ==================== -->
+    <section class="section" id="projects" aria-labelledby="projectsTitle">
       <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Learning through building</p>
 
-        <div class="row gy-4">
+            <h2 class="section-title" id="projectsTitle">
+              Systems built around real needs.
+            </h2>
 
-            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="features-item">
-                <i class="bi bi-eye" style="color: #ffbb2c;"></i>
-                <h3><a href="" class="stretched-link">Great Achievements</a></h3>
-              </div>
-            </div><!-- End Feature Item -->
-          
-            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="200">
-              <div class="features-item">
-                <i class="bi bi-infinity" style="color: #5578ff;"></i>
-                <h3><a href="" class="stretched-link">Clear Vision</a></h3>
-              </div>
-            </div><!-- End Feature Item -->
-          
-            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="300">
-              <div class="features-item">
-                <i class="bi bi-mortarboard" style="color: #e80368;"></i>
-                <h3><a href="" class="stretched-link">Endless Possibilities</a></h3>
-              </div>
-            </div><!-- End Feature Item -->
-          
-            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="400">
-              <div class="features-item">
-                <i class="bi bi-nut" style="color: #e361ff;"></i>
-                <h3><a href="" class="stretched-link">Knowledge Pursuit</a></h3>
-              </div>
-            </div><!-- End Feature Item -->
-          
-            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="500">
-              <div class="features-item">
-                <i class="bi bi-shuffle" style="color: #47aeff;"></i>
-                <h3><a href="" class="stretched-link">Innovative Solutions</a></h3>
-              </div>
-            </div><!-- End Feature Item -->
-          
-            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="600">
-              <div class="features-item">
-                <i class="bi bi-star" style="color: #ffa76e;"></i>
-                <h3><a href="" class="stretched-link">Shining Stars</a></h3>
-              </div>
-            </div><!-- End Feature Item -->
-          
-            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="700">
-              <div class="features-item">
-                <i class="bi bi-x-diamond" style="color: #11dbcf;"></i>
-                <h3><a href="" class="stretched-link">Unique Ideas</a></h3>
-              </div>
-            </div><!-- End Feature Item -->
-          
-            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="800">
-              <div class="features-item">
-                <i class="bi bi-camera-video" style="color: #4233ff;"></i>
-                <h3><a href="" class="stretched-link">Creative Vision</a></h3>
-              </div>
-            </div><!-- End Feature Item -->
-          
-            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="900">
-              <div class="features-item">
-                <i class="bi bi-command" style="color: #b2904f;"></i>
-                <h3><a href="" class="stretched-link">Commanding Leadership</a></h3>
-              </div>
-            </div><!-- End Feature Item -->
-          
-            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1000">
-              <div class="features-item">
-                <i class="bi bi-dribbble" style="color: #b20969;"></i>
-                <h3><a href="" class="stretched-link">Game Changing</a></h3>
-              </div>
-            </div><!-- End Feature Item -->
-          
-            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1100">
-              <div class="features-item">
-                <i class="bi bi-activity" style="color: #ff5828;"></i>
-                <h3><a href="" class="stretched-link">Active Engagement</a></h3>
-              </div>
-            </div><!-- End Feature Item -->
-          
-            <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="1200">
-              <div class="features-item">
-                <i class="bi bi-brightness-high" style="color: #29cc61;"></i>
-                <h3><a href="" class="stretched-link">Bright Future</a></h3>
-              </div>
-            </div><!-- End Feature Item -->
-          
+            <p class="section-description">
+              Management systems and web applications exploring
+              healthcare, education, rentals, agriculture, and
+              everyday digital experiences.
+            </p>
           </div>
-          
+
+          <a
+            class="text-link"
+            href="https://github.com/nakungu-esther"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Explore GitHub, opens in a new tab"
+          >Explore GitHub ↗</a>
         </div>
 
+        <div class="project-grid">
+          <!-- BLOOD MANAGEMENT -->
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-symbol" aria-hidden="true">AB</span>
+              <span class="project-category">Healthcare</span>
+            </div>
+
+            <h3>Agriblood Management System</h3>
+
+            <p>
+              A JavaScript-based system designed to support blood
+              management and coordination across the country.
+              The project applies software to a practical healthcare
+              management challenge.
+            </p>
+
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Blood management</span>
+              <span class="tag">Web application</span>
+            </div>
+
+            <div class="project-bottom">
+              <a
+                class="text-link"
+                href="https://inspiring-florentine-54bb2d.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Agriblood Management System, opens in a new tab"
+              >View live project ↗</a>
+            </div>
+          </article>
+
+          <!-- SCHOOL MANAGEMENT -->
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-symbol" aria-hidden="true">SM</span>
+              <span class="project-category">Education</span>
+            </div>
+
+            <h3>School Management System</h3>
+
+            <p>
+              A system designed to support school management
+              and bring administrative work into a more organized
+              digital environment.
+            </p>
+
+            <div class="tags">
+              <span class="tag">School management</span>
+              <span class="tag">Administration</span>
+              <span class="tag">Education technology</span>
+            </div>
+
+            <div class="project-bottom">
+              <!-- Replace this text with your school project link later. -->
+              <span class="coming-soon">Link coming soon</span>
+            </div>
+          </article>
+
+          <!-- RENTAL MANAGEMENT -->
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-symbol" aria-hidden="true">MR</span>
+              <span class="project-category">Web &amp; mobile</span>
+            </div>
+
+            <h3>Manage Rentals</h3>
+
+            <p>
+              A rental management system developed for both web
+              and mobile, designed to support property management
+              through accessible digital tools.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Rental management</span>
+              <span class="tag">Web application</span>
+              <span class="tag">Mobile application</span>
+            </div>
+
+            <div class="project-bottom">
+              <a
+                class="text-link"
+                href="https://mrm-rental-manager-frontend-pink.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Manage Rentals web application, opens in a new tab"
+              >View web application ↗</a>
+            </div>
+          </article>
+
+          <!-- FARM MANAGEMENT -->
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-symbol" aria-hidden="true">FM</span>
+              <span class="project-category">Agriculture</span>
+            </div>
+
+            <h3>Farm Management System</h3>
+
+            <p>
+              A farm management application designed to support
+              the organization and tracking of farm operations
+              through a digital platform.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Farm management</span>
+              <span class="tag">Agriculture</span>
+              <span class="tag">Web application</span>
+            </div>
+
+            <div class="project-bottom">
+              <a
+                class="text-link"
+                href="https://fram-tracker-fe.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Farm Management System, opens in a new tab"
+              >View live project ↗</a>
+            </div>
+          </article>
+
+          <!-- BABY YOUTUBE -->
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-symbol" aria-hidden="true">BY</span>
+              <span class="project-category">React</span>
+            </div>
+
+            <h3>Baby YouTube</h3>
+
+            <p>
+              A responsive React webpage designed around
+              a video browsing experience for children.
+            </p>
+
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Responsive design</span>
+              <span class="tag">Web interface</span>
+            </div>
+
+            <div class="project-bottom">
+              <a
+                class="text-link"
+                href="https://meek-truffle-06a284.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Baby YouTube, opens in a new tab"
+              >View live project ↗</a>
+            </div>
+          </article>
+
+          <!-- WEATHER APP -->
+          <article class="project-card">
+            <div class="project-top">
+              <span class="project-symbol" aria-hidden="true">WA</span>
+              <span class="project-category">Weather</span>
+            </div>
+
+            <h3>Weather App</h3>
+
+            <p>
+              A React application designed to present current
+              weather updates through a straightforward interface.
+            </p>
+
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Weather data</span>
+              <span class="tag">Frontend development</span>
+            </div>
+
+            <div class="project-bottom">
+              <a
+                class="text-link"
+                href="https://dulcet-liger-79d43f.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Weather App, opens in a new tab"
+              >View live project ↗</a>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
 
-    </section><!-- /Interests Section -->
+    <!-- ==================== ANIMATED SKILLS ==================== -->
+    <section class="section" id="skills" aria-labelledby="skillsTitle">
+      <div class="container skills-layout">
+        <div>
+          <p class="section-label">My technical foundation</p>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
+          <h2 class="section-title" id="skillsTitle">
+            Tools I work with.
+          </h2>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <div><span>Check my</span> <span class="description-title">Testimonials</span></div>
-      </div><!-- End Section Title -->
+          <p class="section-description">
+            Frontend, backend, and database technologies that support
+            my approach to building complete applications.
+          </p>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <p class="skills-note">
+            Percentages represent my personal skill assessments.
+          </p>
+        </div>
 
-        <div class="swiper init-swiper" data-speed="600" data-delay="5000" data-breakpoints="{ &quot;320&quot;: { &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 40 }, &quot;1200&quot;: { &quot;slidesPerView&quot;: 3, &quot;spaceBetween&quot;: 40 } }">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 20
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>As the CEO and founder of Groundbreaker, a pioneering program focused on providing scholarships for girls in technology, she is dedicated to empowering young women to pursue careers in this vital field. Her vision for Groundbreaker is to bridge the gender gap in technology by offering educational opportunities, mentorship, and support to aspiring female tech leaders to improve their lives.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img src="images/image.png" class="testimonial-img" alt="">
-                  <h3>Leoni Rossberg
-                  </h3>
-                  <h4>Co-founder & Managing Director</h4>
-                </div>
-              </div><!-- End testimonial item -->
-              
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>As a tech recruiter, she is dedicated to empowering young girls in technology by championing initiatives like Groundbreaker. Her commitment to identifying and nurturing talent from underrepresented backgrounds ensures aspiring female tech leaders have access to the resources they need to succeed. By fostering relationships with educational institutions and tech companies.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img src="images/pic.jpeg" class="testimonial-img" alt="">
-                  <h3>Laura Kyongo</h3>
-                  <h4>Talent | Tech Recruiter | Global Connector | Headhunter | People Ops | Partnership</h4>
-                </div>
-              </div><!-- End testimonial item -->
-              
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>As a manager, she is committed to fostering a collaborative and inclusive work culture that empowers her team. She prioritizes open communication and mentorship, guiding her team members to achieve their professional goals while fostering personal growth. By championing diversity and inclusion initiatives, she advocates for practices that uplift underrepresented groups in the workplace.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img src="images/essym.jpeg" class="testimonial-img" alt="">
-                  <h3>Esther Nansubuga</h3>
-                  <h4>Program Manager | Tech Enthusiast | Digital Literacy Skills Trainer</h4>
-                </div>
-              </div><!-- End testimonial item -->
-              
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>As the Programs Lead for Skilling at Refactory, he is focused on developing impactful training programs  in technology. He oversees the entire program lifecycle, from curriculum design to implementation and evaluation, ensuring that the training content is relevant and aligned with current job market demands. His strategic vision incorporates hands-on learning experiences.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img src="images/muk.jpeg" class="testimonial-img" alt="">
-                  <h3>Mukulembeze Wilfred (AWS CCP)</h3>
-                  <h4>Programs Lead - Skilling | Training Program Development and Planning, Curriculum Design</h4>
-                </div>
-              </div><!-- End testimonial item -->
-              
-              <div class="swiper-slide">
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>As a Technical Facilitator, he is dedicated to providing hands-on training that empowers young girls in technology. His sessions are interactive, engaging participants in practical exercises that build their technical skills. By adapting his teaching methods to suit diverse learning styles, he ensures that every participant can grasp complex concepts and prepares them for real-world challenges.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <img src="images/MAK.jpeg" class="testimonial-img" alt="">
-                  <h3>Latim Mark</h3>
-                  <h4>Software Engineer | Technical Facilitator</h4>
-                </div>
-              </div><!-- End testimonial item -->
+        <div class="skills-grid" id="skillsGrid">
+          <div class="skill-item">
+            <div class="skill-label">
+              <span id="htmlLabel">HTML</span>
+              <span class="skill-percent">100%</span>
+            </div>
+            <div
+              class="skill-track"
+              role="meter"
+              aria-labelledby="htmlLabel"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="100"
+            >
+              <div
+                class="skill-fill"
+                style="--level:100%;--delay:0ms"
+              ></div>
+            </div>
           </div>
-              
-              <div class="swiper-pagination"></div>
 
-              
+          <div class="skill-item">
+            <div class="skill-label">
+              <span id="nodeLabel">Node.js</span>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div
+              class="skill-track"
+              role="meter"
+              aria-labelledby="nodeLabel"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="80"
+            >
+              <div
+                class="skill-fill"
+                style="--level:80%;--delay:80ms"
+              ></div>
+            </div>
+          </div>
 
+          <div class="skill-item">
+            <div class="skill-label">
+              <span id="cssLabel">CSS</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div
+              class="skill-track"
+              role="meter"
+              aria-labelledby="cssLabel"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="90"
+            >
+              <div
+                class="skill-fill"
+                style="--level:90%;--delay:160ms"
+              ></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-label">
+              <span id="wordpressLabel">WordPress / CMS</span>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div
+              class="skill-track"
+              role="meter"
+              aria-labelledby="wordpressLabel"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="90"
+            >
+              <div
+                class="skill-fill"
+                style="--level:90%;--delay:240ms"
+              ></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-label">
+              <span id="jsLabel">JavaScript</span>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div
+              class="skill-track"
+              role="meter"
+              aria-labelledby="jsLabel"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="75"
+            >
+              <div
+                class="skill-fill"
+                style="--level:75%;--delay:320ms"
+              ></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-label">
+              <span id="mongoLabel">MongoDB</span>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div
+              class="skill-track"
+              role="meter"
+              aria-labelledby="mongoLabel"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="85"
+            >
+              <div
+                class="skill-fill"
+                style="--level:85%;--delay:400ms"
+              ></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-label">
+              <span id="reactLabel">React</span>
+              <span class="skill-percent">55%</span>
+            </div>
+            <div
+              class="skill-track"
+              role="meter"
+              aria-labelledby="reactLabel"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="55"
+            >
+              <div
+                class="skill-fill"
+                style="--level:55%;--delay:480ms"
+              ></div>
+            </div>
+          </div>
+
+          <div class="skill-item">
+            <div class="skill-label">
+              <span id="postgresLabel">PostgreSQL</span>
+              <span class="skill-percent">55%</span>
+            </div>
+            <div
+              class="skill-track"
+              role="meter"
+              aria-labelledby="postgresLabel"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="55"
+            >
+              <div
+                class="skill-fill"
+                style="--level:55%;--delay:560ms"
+              ></div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-    </section><!-- /Testimonials Section -->
+    <!-- ==================== VALUES ==================== -->
+    <section class="section" aria-labelledby="valuesTitle">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">What motivates me</p>
 
+            <h2 class="section-title" id="valuesTitle">
+              Curiosity, creativity, and growth.
+            </h2>
+
+            <p class="section-description">
+              The values that guide my learning and shape
+              how I approach new challenges.
+            </p>
+          </div>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-item">
+            <span aria-hidden="true">✦</span>Meaningful achievements
+          </div>
+          <div class="value-item">
+            <span aria-hidden="true">✦</span>Clear vision
+          </div>
+          <div class="value-item">
+            <span aria-hidden="true">✦</span>Exploring possibilities
+          </div>
+          <div class="value-item">
+            <span aria-hidden="true">✦</span>Continuous learning
+          </div>
+          <div class="value-item">
+            <span aria-hidden="true">✦</span>Innovative solutions
+          </div>
+          <div class="value-item">
+            <span aria-hidden="true">✦</span>Celebrating others
+          </div>
+          <div class="value-item">
+            <span aria-hidden="true">✦</span>Original ideas
+          </div>
+          <div class="value-item">
+            <span aria-hidden="true">✦</span>Creative thinking
+          </div>
+          <div class="value-item">
+            <span aria-hidden="true">✦</span>Thoughtful leadership
+          </div>
+          <div class="value-item">
+            <span aria-hidden="true">✦</span>Positive change
+          </div>
+          <div class="value-item">
+            <span aria-hidden="true">✦</span>Active engagement
+          </div>
+          <div class="value-item">
+            <span aria-hidden="true">✦</span>Building a brighter future
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PEOPLE & COMMUNITY ==================== -->
+    <section class="section" aria-labelledby="communityTitle">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">People &amp; community</p>
+
+            <h2 class="section-title" id="communityTitle">
+              Education. Opportunity. Encouragement.
+            </h2>
+
+            <p class="section-description">
+              Technology careers grow through more than technical skills.
+              They also depend on access to education, practical guidance,
+              and people who help create opportunities. These profiles
+              highlight work in training, mentorship, and talent
+              development across Groundbreaker and Refactory Academy.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="community-carousel"
+          id="communityCarousel"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="People and community profiles"
+        >
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="carouselTrack">
+
+              <!-- LEONI ROSSBERG -->
+              <article class="person-slide" aria-label="1 of 5">
+                <div class="person-avatar">
+                  <span aria-hidden="true">LR</span>
+                  <img
+                    src="images/image.png"
+                    alt="Leoni Rossberg"
+                    width="180"
+                    height="180"
+                    loading="lazy"
+                    data-image-fallback
+                  >
+                </div>
+
+                <div>
+                  <h3>Leoni Rossberg</h3>
+
+                  <p class="person-role">
+                    Co-founder &amp; Managing Director · Groundbreaker
+                  </p>
+
+                  <p class="person-description">
+                    Leoni Rossberg is the Co-founder and Managing
+                    Director of Groundbreaker, an organisation creating
+                    pathways into technology for young African women
+                    from financially constrained backgrounds. Through
+                    Groundbreaker Talents, she champions an approach
+                    that combines technical education, residential
+                    learning, mentorship, and professional connections.
+                    In discussing the programme, she highlights the
+                    importance of building confidence alongside practical
+                    skills and connecting learners with international
+                    technology mentors. Her work brings together
+                    educational opportunity and a commitment to a more
+                    diverse technology workforce.
+                  </p>
+
+                  <a
+                    class="profile-source"
+                    href="https://groundbreaker.org/exploring-groundbreaker-talents-interview-with-our-co-founder-and-managing-director/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Read Groundbreaker’s interview with Leoni, opens in a new tab"
+                  >Read her Groundbreaker interview ↗</a>
+                </div>
+              </article>
+
+              <!-- LAURA KYONGO -->
+              <article class="person-slide" aria-label="2 of 5">
+                <div class="person-avatar">
+                  <span aria-hidden="true">LK</span>
+                  <img
+                    src="images/pic.jpeg"
+                    alt="Laura Kyongo"
+                    width="180"
+                    height="180"
+                    loading="lazy"
+                    data-image-fallback
+                  >
+                </div>
+
+                <div>
+                  <h3>Laura Kyongo</h3>
+
+                  <p class="person-role">
+                    Country Director · Groundbreaker Talents
+                  </p>
+
+                  <p class="person-description">
+                    Laura Kyongo brings more than a decade of experience
+                    in talent sourcing, recruitment, and retention
+                    across different industries. She joined Groundbreaker
+                    Talents as Partnership and Placement Lead, supporting
+                    scholars as they moved from training into professional
+                    life and developing the programme’s local partner
+                    network. Groundbreaker now lists her as Country
+                    Director. Her professional journey connects talent
+                    development with employment opportunities, helping
+                    create stronger links between emerging female
+                    technology talent and the organisations seeking
+                    their skills.
+                  </p>
+
+                  <a
+                    class="profile-source"
+                    href="https://groundbreaker.org/about-us/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Meet the Groundbreaker team, opens in a new tab"
+                  >Meet the Groundbreaker team ↗</a>
+                </div>
+              </article>
+
+              <!-- ESTHER NANSUBUGA -->
+              <article class="person-slide" aria-label="3 of 5">
+                <div class="person-avatar">
+                  <span aria-hidden="true">EN</span>
+                  <img
+                    src="images/essym.jpeg"
+                    alt="Esther Nansubuga"
+                    width="180"
+                    height="180"
+                    loading="lazy"
+                    data-image-fallback
+                  >
+                </div>
+
+                <div>
+                  <h3>Esther Nansubuga</h3>
+
+                  <p class="person-role">
+                    Program Manager · Groundbreaker Talents
+                  </p>
+
+                  <p class="person-description">
+                    Esther Nansubuga is a Program Manager at Groundbreaker
+                    Talents, where her work supports scholars’ learning
+                    and development. Groundbreaker’s impact report
+                    describes her as an information technology graduate
+                    and digital skills trainer with previous ICT
+                    instruction experience across public and private
+                    sector projects. Her professional focus includes
+                    opening opportunities in technology for women and
+                    young people in Uganda. She brings a combination
+                    of technical understanding, teaching experience,
+                    and programme support to an environment that
+                    prepares learners for careers in the technology
+                    sector.
+                  </p>
+
+                  <a
+                    class="profile-source"
+                    href="https://groundbreaker.org/about-us/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Meet the Groundbreaker team, opens in a new tab"
+                  >Meet the Groundbreaker team ↗</a>
+                </div>
+              </article>
+
+              <!-- WILFRED MUKULEMBEZE -->
+              <article class="person-slide" aria-label="4 of 5">
+                <div class="person-avatar">
+                  <span aria-hidden="true">WM</span>
+                  <img
+                    src="images/muk.jpeg"
+                    alt="Wilfred Mukulembeze"
+                    width="180"
+                    height="180"
+                    loading="lazy"
+                    data-image-fallback
+                  >
+                </div>
+
+                <div>
+                  <h3>Wilfred Mukulembeze</h3>
+
+                  <p class="person-role">
+                    Programs Lead – Advanced · Refactory Academy
+                  </p>
+
+                  <p class="person-description">
+                    Wilfred Mukulembeze is listed by Refactory Academy
+                    as Programs Lead for its advanced programmes.
+                    His role places him within an organisation focused
+                    on connecting technology education with the skills
+                    employers need. Refactory combines technical
+                    training with professional skills and provides
+                    pathways through certificate programmes, industry
+                    learning, and job placement. Its advanced course
+                    offering spans areas such as cloud computing,
+                    artificial intelligence, cybersecurity, and product
+                    development. This provides the wider educational
+                    context for his work in advanced technology training.
+                  </p>
+
+                  <a
+                    class="profile-source"
+                    href="https://refactory.academy/about-us/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Meet the Refactory Academy team, opens in a new tab"
+                  >Meet the Refactory team ↗</a>
+                </div>
+              </article>
+
+              <!-- MARK LATIM -->
+              <article class="person-slide" aria-label="5 of 5">
+                <div class="person-avatar">
+                  <span aria-hidden="true">ML</span>
+                  <img
+                    src="images/MAK.jpeg"
+                    alt="Mark Latim"
+                    width="180"
+                    height="180"
+                    loading="lazy"
+                    data-image-fallback
+                  >
+                </div>
+
+                <div>
+                  <h3>Mark Latim</h3>
+
+                  <p class="person-role">
+                    Technical Coach – Python · Refactory Academy
+                  </p>
+
+                  <p class="person-description">
+                    Mark Latim is a Technical Coach in Python at
+                    Refactory Academy. His work sits within the
+                    academy’s practical approach to developing software
+                    talent and preparing learners for professional
+                    engineering environments. A learner story published
+                    by Refactory identifies him among the mentors who
+                    supported the development of full-stack projects
+                    and the transition from classroom concepts to
+                    practical software development. His profile
+                    highlights the role of technical coaching in helping
+                    emerging developers apply their knowledge and build
+                    experience through real projects.
+                  </p>
+
+                  <a
+                    class="profile-source"
+                    href="https://refactory.academy/about-us/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Meet the Refactory Academy team, opens in a new tab"
+                  >Meet the Refactory team ↗</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="carousel-controls" id="carouselControls" hidden>
+            <div class="carousel-buttons">
+              <button
+                class="carousel-button"
+                id="previousSlide"
+                type="button"
+                aria-label="Previous profile"
+              >←</button>
+
+              <button
+                class="carousel-button"
+                id="nextSlide"
+                type="button"
+                aria-label="Next profile"
+              >→</button>
+
+              <button
+                class="carousel-button"
+                id="autoplayToggle"
+                type="button"
+              >Pause</button>
+            </div>
+
+            <div
+              class="carousel-dots"
+              id="carouselDots"
+              role="group"
+              aria-label="Choose a profile"
+            ></div>
+
+            <span class="slide-count" id="slideCount">01 / 05</span>
+          </div>
+
+          <p
+            class="sr-only"
+            id="slideAnnouncement"
+            role="status"
+            aria-atomic="true"
+          ></p>
+        </div>
+
+        <p class="community-note">
+          Profiles summarise publicly available professional information.
+          They are not testimonials or endorsements.
+        </p>
+
+        <noscript>
+          <style>
+            .carousel-track {
+              display: block;
+            }
+
+            .person-slide + .person-slide {
+              border-top: 1px solid var(--border);
+            }
+          </style>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="cta-section" aria-labelledby="ctaTitle">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <p class="section-label">Start a conversation</p>
+
+            <h2 id="ctaTitle">Have something in mind?</h2>
+
+            <p>
+              Get in touch to discuss a project, ask a question,
+              or explore a professional opportunity.
+            </p>
+          </div>
+
+          <a class="button button-primary" href="contact.html">
+            Let’s connect <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- <footer id="footer" class="footer dark-background">
-    <div class="container">
-      <h3 class="sitename">Personal</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Personal</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits"> -->
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-      </div>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>
+        &copy; <span id="year">2026</span> Esther Nakungu.
+        All rights reserved.
+      </p>
+
+      <a href="#top">Back to top ↑</a>
     </div>
-  </footer> -->
+  </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script>
+    "use strict";
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+    // ==================== FOOTER YEAR ====================
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-  <!-- Vendor JS Files -->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/php-email-form/validate.js"></script>
-  <script src="vendor/aos/aos.js"></script>
-     <script src="vendor/typed.js/typed.umd.js"></script> 
-    <script src="vendor/purecounter/purecounter_vanilla.js"></script> 
-  <script src="vendor/waypoints/noframework.waypoints.js"></script> 
-  <script src="vendor/swiper/swiper-bundle.min.js"></script> 
-    <script src="vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>   
+    // ==================== IMAGE FALLBACKS ====================
+    document.querySelectorAll("[data-image-fallback]").forEach(
+      function (image) {
+        function showFallback() {
+          image.hidden = true;
+        }
 
-  <!-- Main JS File -->
-  <script src="js/main.js"></script>
+        image.addEventListener("error", showFallback);
 
+        if (image.complete && image.naturalWidth === 0) {
+          showFallback();
+        }
+      }
+    );
+
+    // ==================== MOBILE NAVIGATION ====================
+    const menuToggle = document.getElementById("menuToggle");
+    const navigation = document.getElementById("navigation");
+    const mobileViewport = window.matchMedia("(max-width: 760px)");
+
+    menuToggle.hidden = false;
+    navigation.dataset.collapsible = "true";
+
+    function setMenuOpen(open) {
+      navigation.classList.toggle("is-open", open);
+      menuToggle.setAttribute("aria-expanded", String(open));
+
+      menuToggle.setAttribute(
+        "aria-label",
+        open ? "Close navigation" : "Open navigation"
+      );
+
+      menuToggle.textContent = open ? "×" : "☰";
+    }
+
+    menuToggle.addEventListener("click", function () {
+      setMenuOpen(
+        menuToggle.getAttribute("aria-expanded") !== "true"
+      );
+    });
+
+    navigation.addEventListener("click", function (event) {
+      if (
+        event.target.closest("a") &&
+        mobileViewport.matches
+      ) {
+        setMenuOpen(false);
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (
+        event.key === "Escape" &&
+        menuToggle.getAttribute("aria-expanded") === "true"
+      ) {
+        setMenuOpen(false);
+        menuToggle.focus();
+      }
+    });
+
+    document.addEventListener("click", function (event) {
+      if (
+        mobileViewport.matches &&
+        !navigation.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
+    });
+
+    mobileViewport.addEventListener("change", function () {
+      setMenuOpen(false);
+    });
+
+    // ==================== MOTION PREFERENCE ====================
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    // ==================== ANIMATED SKILL BARS ====================
+    const skillsGrid = document.getElementById("skillsGrid");
+
+    if (
+      "IntersectionObserver" in window &&
+      !reducedMotion.matches
+    ) {
+      skillsGrid.classList.add("is-ready");
+
+      const skillsObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              requestAnimationFrame(function () {
+                skillsGrid.classList.add("is-visible");
+              });
+
+              skillsObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      skillsObserver.observe(skillsGrid);
+    }
+
+    // ==================== COMMUNITY SLIDER ====================
+    const carousel = document.getElementById("communityCarousel");
+    const track = document.getElementById("carouselTrack");
+    const slides = Array.from(track.children);
+    const dotsContainer = document.getElementById("carouselDots");
+    const previousButton = document.getElementById("previousSlide");
+    const nextButton = document.getElementById("nextSlide");
+    const autoplayButton = document.getElementById("autoplayToggle");
+    const count = document.getElementById("slideCount");
+    const announcement = document.getElementById("slideAnnouncement");
+
+    let currentSlide = 0;
+    let autoplayTimer = null;
+    let manuallyPaused = reducedMotion.matches;
+    let pointerInside = false;
+    let carouselVisible = true;
+
+    document.getElementById("carouselControls").hidden = false;
+
+    const dots = slides.map(function (slide, index) {
+      slide.setAttribute("role", "group");
+      slide.setAttribute("aria-roledescription", "slide");
+
+      const button = document.createElement("button");
+      button.className = "carousel-dot";
+      button.type = "button";
+
+      button.setAttribute(
+        "aria-label",
+        "Show profile: " + slide.querySelector("h3").textContent
+      );
+
+      button.addEventListener("click", function () {
+        showSlide(index, true);
+        restartAutoplay();
+      });
+
+      dotsContainer.appendChild(button);
+      return button;
+    });
+
+    function showSlide(index, announce) {
+      currentSlide =
+        (index + slides.length) % slides.length;
+
+      track.style.transform =
+        "translateX(-" + (currentSlide * 100) + "%)";
+
+      slides.forEach(function (slide, slideIndex) {
+        const active = slideIndex === currentSlide;
+
+        slide.setAttribute("aria-hidden", String(!active));
+        slide.inert = !active;
+
+        // Also prevent off-screen links from receiving keyboard focus.
+        slide.querySelectorAll("a, button").forEach(
+          function (element) {
+            if (active) {
+              element.removeAttribute("tabindex");
+            } else {
+              element.setAttribute("tabindex", "-1");
+            }
+          }
+        );
+
+        dots[slideIndex].setAttribute(
+          "aria-current",
+          String(active)
+        );
+      });
+
+      count.textContent =
+        String(currentSlide + 1).padStart(2, "0") +
+        " / " +
+        String(slides.length).padStart(2, "0");
+
+      if (announce) {
+        announcement.textContent =
+          slides[currentSlide].querySelector("h3").textContent +
+          ", profile " + (currentSlide + 1) +
+          " of " + slides.length;
+      }
+    }
+
+    function stopAutoplay() {
+      window.clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+
+    function restartAutoplay() {
+      stopAutoplay();
+
+      autoplayButton.textContent =
+        manuallyPaused ? "Play" : "Pause";
+
+      autoplayButton.setAttribute(
+        "aria-label",
+        manuallyPaused
+          ? "Start automatic profile slides"
+          : "Pause automatic profile slides"
+      );
+
+      if (
+        manuallyPaused ||
+        pointerInside ||
+        document.hidden ||
+        !carouselVisible ||
+        carousel.contains(document.activeElement)
+      ) {
+        return;
+      }
+
+      // Twelve seconds allows more time for the expanded profiles.
+      autoplayTimer = window.setInterval(function () {
+        showSlide(currentSlide + 1, false);
+      }, 12000);
+    }
+
+    previousButton.addEventListener("click", function () {
+      showSlide(currentSlide - 1, true);
+      restartAutoplay();
+    });
+
+    nextButton.addEventListener("click", function () {
+      showSlide(currentSlide + 1, true);
+      restartAutoplay();
+    });
+
+    autoplayButton.addEventListener("click", function () {
+      manuallyPaused = !manuallyPaused;
+      restartAutoplay();
+    });
+
+    // Pause while a visitor reads with their pointer over the slider.
+    carousel.addEventListener("pointerenter", function (event) {
+      if (event.pointerType === "mouse") {
+        pointerInside = true;
+        stopAutoplay();
+      }
+    });
+
+    carousel.addEventListener("pointerleave", function () {
+      pointerInside = false;
+      restartAutoplay();
+    });
+
+    // Pause while keyboard users interact with the slider.
+    carousel.addEventListener("focusin", stopAutoplay);
+
+    carousel.addEventListener("focusout", function () {
+      window.setTimeout(restartAutoplay, 0);
+    });
+
+    document.addEventListener(
+      "visibilitychange",
+      restartAutoplay
+    );
+
+    reducedMotion.addEventListener("change", function (event) {
+      if (event.matches) {
+        manuallyPaused = true;
+        skillsGrid.classList.add("is-visible");
+      }
+
+      restartAutoplay();
+    });
+
+    // Run autoplay only while this section is on screen.
+    if ("IntersectionObserver" in window) {
+      const carouselObserver = new IntersectionObserver(
+        function (entries) {
+          carouselVisible = entries[0].isIntersecting;
+          restartAutoplay();
+        },
+        { threshold: 0.1 }
+      );
+
+      carouselObserver.observe(carousel);
+    }
+
+    showSlide(0, false);
+    restartAutoplay();
+  </script>
 </body>
-
 </html>
